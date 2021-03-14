@@ -15,11 +15,7 @@ export class Log {
     createdAt: string;
 
     @Column("json")
-    data: {
-        element_analysis: ElementAnalysis
-        file_analysis: FileAnalysis[]
-        meta: MetaAnalysis
-    };
+    data: ZuixAnalysisLog;
     
 }
 
@@ -38,4 +34,10 @@ type FileAnalysis = {
     elementTags: string[]
     zuixElementTags: string[]
     zuixRatio: number
+}
+
+type ZuixAnalysisLog = {
+    element_analysis: ElementAnalysis
+    file_analysis: FileAnalysis[]
+    meta: MetaAnalysis
 }
